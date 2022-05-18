@@ -26,7 +26,7 @@
                 <h4><?php echo $mb->no_plat?></h4>
 
 
-                <a href="<?php echo base_url('customer/data_mobil/detail_mobil/'.$mb->id_mobil)?>" class="btn btn-warning ml-2 mt-2">Detail Mobil</a>           
+                <a href="<?php echo base_url('costumer/data_mobil/detail_mobil_nana/'.$mb->id_mobil)?>" class="btn btn-warning ml-2 mt-2">Detail Mobil</a>           
                 
                 <?php
                 if ($mb->status == "0") { 
