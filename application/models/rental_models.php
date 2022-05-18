@@ -13,5 +13,21 @@ class rental_models extends CI_Model{
         $this->db->update($table,$data,$where);
     }
 
+    public function delete_data($where, $table){
+        $this->db->where($where);
+        $this->db->delete($table);
+    }
+
+    public function ambil_id_mobil_nana($id){
+        $result = $this->db->where('id_mobil',$id)->get('mobil');
+        if ($result->num_rows() > 0) {
+            return $result->result();
+        }else{
+            return false;
+        }
+    }
+
+    
+
 }
 ?>
