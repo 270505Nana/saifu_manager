@@ -16,6 +16,7 @@
                 <th width="20px">No</th>
                 <th>Kode Tipe</th>
                 <th>Nama Tipe</th>
+                <th width="180px">Aksi</th>
             </tr>
         </thead>
 
@@ -27,6 +28,13 @@
                 <td><?=$no++?></td>
                 <td><?= $tp->kode_tipe ?></td>
                 <td><?= $tp->nama_tipe ?></td>
+                <td>
+                    <center>
+                        <a href="<?= base_url('admin/data_tipe/update_tipe_nana/').$tp->id_tipe ?>" class="btn btn-sm btn-primary"><i class="fas fa-edit"></i></a>
+
+                        <a onclick="return confirm('Hapus Data?')" class="btn btn-sm btn-danger" href="<?= base_url('admin/data_tipe/delete_tipe_nana/').$tp->id_tipe ?>"><i class="fas fa-trash"></i></a>
+                    </center>
+                </td>
             </tr>
             <?php endforeach;?>
         </tbody>
