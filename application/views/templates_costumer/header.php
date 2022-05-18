@@ -11,7 +11,7 @@
 
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
 
-    <title>PHPJabbers.com | Free Car Rental Website Template</title>
+    <title>FREE CAR RENTAL</title>
 
     <!-- Bootstrap core CSS -->
     <link href="<?php echo base_url('assets/assets_shop')?>/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -46,9 +46,9 @@
           <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
             
-                <li class="nav-item"><a class="nav-link" href="<?php echo base_url('customer/dashboard')?>">Beranda</a></li>
-                <li class="nav-item"><a class="nav-link" href="<?php echo base_url('customer/data_mobil')?>">Mobil</a></li>
-                <li class="nav-item"><a class="nav-link" href="<?php echo base_url('customer/transaksi')?>">Transaksi</a></li>
+                <li class="nav-item"><a class="nav-link" href="<?php echo base_url('costumer/dashboard')?>">Beranda</a></li>
+                <li class="nav-item"><a class="nav-link" href="<?php echo base_url('costumer/data_mobil')?>">Mobil</a></li>
+                <li class="nav-item"><a class="nav-link" href="<?php echo base_url('costumer/transaksi')?>">Transaksi</a></li>
 
                 <li class="nav-item"><a class="nav-link" href="<?php echo base_url('register')?>">Register</a></li>
                 <li class="nav-item">
