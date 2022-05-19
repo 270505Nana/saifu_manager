@@ -11,7 +11,7 @@
 
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
 
-    <title>FREE CAR RENTAL</title>
+    <title>CAR RENTAL</title>
 
     <!-- Bootstrap core CSS -->
     <link href="<?php echo base_url('assets/assets_shop')?>/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
