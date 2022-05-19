@@ -57,38 +57,40 @@ class Auth extends CI_Controller{
         redirect('costumer/dashboard');
     }
 
-    // public function ganti_password()
-    // {
-    //     $this->load->view('templates_admin/header');
-    //     $this->load->view('ganti_password'); 
-    //     $this->load->view('templates_admin/footer');    
-    // }
-    // public function ganti_password_aksi()
-    // {
+    public function ganti_password()
+    {
+        $this->load->view('templates_admin/header');
+        $this->load->view('ganti_password'); 
+        $this->load->view('templates_admin/footer');    
+    }
 
-    //     $pass_baru = $this->input->post('pass_baru');
-    //     $ulang_pass = $this->input->post('ulang_pass');
+    public function ganti_password_aksi()
+    {
 
-    //     $this->form_validation->set_rules('pass_baru','Password Baru', 'required|matches[ulang_pass]');
-    //     $this->form_validation->set_rules('ulang_pass','Ulangi Password', 'required');
+        $pass_baru = $this->input->post('pass_baru');
+        $ulang_pass = $this->input->post('ulang_pass');
 
-    //     if($this->form_validation->run() == FALSE){
-    //         $this->load->view('templates_admin/header');
-    //         $this->load->view('ganti_password'); 
-    //         $this->load->view('templates_admin/footer');    
-    //     }else{
-    //         $data = array('password' =>md5($pass_baru));
-    //         $id = array('id_customer' =>$this->session->userdata('id_customer'));
+        $this->form_validation->set_rules('pass_baru','Password Baru', 'required|matches[ulang_pass]');
+        $this->form_validation->set_rules('ulang_pass','Ulangi Password', 'required');
 
-    //         $this->rental_model->update_password($id,$data,'customer');
-    //         $this->session->set_flashdata('pesan','<div class="alert alert-success alert-dismissible fade show" role="alert">
-    //                 Password berhasil diganti, Silahkan Login!.
-    //                 <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span>
-    //                 </button>
-    //                 </div>');
-    //             redirect('auth/login');
-    //     }
-    // }
+        if($this->form_validation->run() == FALSE){
+            $this->load->view('templates_admin/header');
+            $this->load->view('ganti_password'); 
+            $this->load->view('templates_admin/footer');    
+        }else{
+            $data = array('password'  =>$pass_baru);
+            $id = array('id_costumer' =>$this->session->userdata('id_costumer'));
+
+            $this->rental_models->update_password($id,$data,'costumer');
+            $this->session->set_flashdata('pesan',' <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <strong> Berhasil Ganti Password, Silahkan Login! </strong>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        </div>');
+                redirect('auth/login');
+        }
+    }
 
 }
 
