@@ -18,8 +18,8 @@ class register extends CI_Controller{
             $gender      = $this->input->post('gender');
             $no_telepon  = $this->input->post('no_telepon');
             $no_ktp      = $this->input->post('no_ktp');
-            $password    = md5($this->input->post('password'));
-
+            $password    = $this->input->post('password');
+            $role_id     = '2';
 
             $data = array(
                 'nama'       => $nama,
@@ -28,7 +28,8 @@ class register extends CI_Controller{
                 'gender'     => $gender,
                 'no_telepon' => $no_telepon,
                 'no_ktp'     => $no_ktp,
-                'password'   => $password
+                'password'   => $password,
+                'role_id'    => $role_id
             );
 
             $this->rental_models->insert_data($data, 'costumer');

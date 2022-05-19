@@ -27,6 +27,24 @@ class rental_models extends CI_Model{
         }
     }
 
+    public function cek_login(){
+        $username = set_value('username');
+        $password = set_value('password');
+
+        $result   = $this->db
+                         ->where('username', $username)
+                         ->where('password',  $password)
+                         ->limit(1)
+                         ->get('costumer');
+        if($result->num_rows() > 0 ){
+            // cek data
+            return  $result->row();
+        }else{
+            return FALSE;
+        }
+
+    }
+
     
 
 }

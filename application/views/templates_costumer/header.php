@@ -51,15 +51,21 @@
                 <li class="nav-item"><a class="nav-link" href="<?php echo base_url('costumer/transaksi')?>">Transaksi</a></li>
 
                 <li class="nav-item"><a class="nav-link" href="<?php echo base_url('register')?>">Register</a></li>
+
+                <!-- LOGOUT -->
                 <li class="nav-item">
+                  <!-- cek session -->
                     <?php if($this->session->userdata('nama')) { ?>
-                    <a class="nav-link" href="<?php echo base_url('auth/logout')?>">Welcome <?php echo $this->session->userdata('nama')?>
+                    <a class="nav-link" href="<?php echo base_url('auth/logout')?>">Halo <?php echo $this->session->userdata('nama')?>
                     <span class=""> | Logout</span></a>
                 </li>
+
+                <!-- GANTI PASSWORD -->
                 <li class="nav-item">
                     <a class="nav-link" href="<?php echo base_url('auth/ganti_password')?>">
                     <span class="">Ganti Password</span></a>
                     <?php } else{ ?>
+                      <!-- LOGIN -->
                         <li><a class="nav-link" href="<?php echo base_url('auth/login')?>">Login</a></li>
                     <?php } ?>
                 </li>

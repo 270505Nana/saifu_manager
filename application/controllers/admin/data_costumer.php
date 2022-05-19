@@ -88,7 +88,7 @@ class data_costumer extends CI_Controller{
             $gender      = $this->input->post('gender');
             $no_telepon  = $this->input->post('no_telepon');
             $no_ktp      = $this->input->post('no_ktp');
-            $password    = md5($this->input->post('password'));
+            $password    = $this->input->post('password');
 
 
             $data = array(
