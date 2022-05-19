@@ -19,7 +19,7 @@
                 <th>No.Telepon</th>
                 <th>No.KTP</th>
                 <th>Password</th>
-                <th width="180px">Aksi</th>
+                <th width="600px">Aksi</th>
             </tr>
 
             <?php
@@ -35,14 +35,13 @@
                 <td><?= $cs->no_ktp?></td>
                 <td><?= $cs->password?></td>
                 <td>
-                    <center>
+                    <div class="row">
 
-                        <a href="<?= base_url('admin/data_costumer/detail_costumer_nana/').$cs->id_costumer ?>" class="btn btn-sm btn-success"><i class="fas fa-eye"></i></a>
+                            <a href="<?= base_url('admin/data_costumer/update_costumer_nana/' ).$cs->id_costumer?>" class="btn btn-sm btn-primary"><i class="fas fa-edit"></i></a>
 
-                        <a href="<?= base_url('admin/data_costumer/update_costumer_nana/').$cs->id_costumer ?>" class="btn btn-sm btn-primary"><i class="fas fa-edit"></i></a>
-
-                        <a onclick="return confirm('Hapus Data?')" class="btn btn-sm btn-danger" href="<?= base_url('admin/data_costumer/delete_costumer_nana/').$cs->id_costumer ?>"><i class="fas fa-trash"></i></a>
-                    </center>
+                            <a onclick="return confirm('Hapus Data?')" class="btn btn-sm btn-danger" href="<?= base_url('admin/data_costumer/delete_costumer_nana/').$cs->id_costumer ?>"><i class="fas fa-trash"></i></a>
+                       
+                    </div>
                 </td>
             </tr>
             <?php endforeach;?>
