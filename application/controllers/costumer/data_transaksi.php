@@ -29,5 +29,39 @@ class data_transaksi extends CI_Controller{
         $this->load->view('templates_costumer/footer');
 
     }
+
+    public function pembayaran_aksi_nana(){
+
+        $id                 = $this->input->post('id_rental');
+        $bukti_pembayaran   =$_FILES['bukti_pembayaran']['name'];
+            if($bukti_pembayaran){
+                $config ['upload_path']       ='./assets/upload';
+                $config ['allowed_types']     ='jpg|jpeg|png|tiff|pdf';
+
+                $this->load->library('upload',$config);
+                if(!$this->upload->do_upload('bukti_pembayaran')){
+                    echo "bukti_pembayaran Gagal diuplad!";
+                }else{
+                    $bukti_pembayaran=$this->upload->data('file_name');
+                }
+            }
+        $data = array (
+            'bukti_pembayaran' => $bukti_pembayaran
+        );
+
+        $where = array(
+            'id_rental' => $id
+        );
+
+        $this->rental_models->update_data('transaksi', $data, $where);
+        $this->session->set_flashdata('pesan','
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <strong> Bukti Pembayaran Anda Berhasil di Upload! </strong>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>');
+        redirect ('costumer/data_transaksi');
+    }
 }
 ?>

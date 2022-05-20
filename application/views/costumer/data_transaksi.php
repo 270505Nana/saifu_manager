@@ -17,7 +17,7 @@
         <div class="card-header">
             Data Transaksi Anda
         </div>
-
+        <span><?= $this->session->flashdata('pesan')?></span>
         <div class="card-body">
             <table class="table table-bordered table-striped">
                 <tr>
