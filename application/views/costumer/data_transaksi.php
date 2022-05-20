@@ -38,6 +38,13 @@
                         <td><?= $tr->merk?></td>
                         <td><?= $tr->no_plat?></td>
                         <td>Rp.<?= number_format($tr->harga,0,',','.')?></td>
+                        <td>
+                            <?php if ($tr->status_rental == "Selesai") { ?>
+                               <button class="btn btn-sm btn-warning">Rental Selesai</button>
+                            <?php }else{ ?>
+                                <a href="<?= base_url('costumer/data_transaksi/pembayaran_nana/'.$tr->id_rental)?>" class="btn btn-sm btn-success">Cek Pembayaran</a>
+                            <?php } ?>
+                        </td>
                     </tr>
                 <?php endforeach; ?>
             </table>
