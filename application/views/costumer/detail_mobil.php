@@ -12,7 +12,7 @@
       </div>
     </div>
 
-    <div class="container">
+    <div class="container" style="margin-top:50px">
         <div class="card ">
             <div class="card-body">
                 <?php foreach ($detail as $dt ) : ?>
@@ -55,7 +55,7 @@
                                         if ($dt->status == "0") { 
                                             echo "<button class='btn btn-danger ml-2 mt-2' disable>Telah di Sewa</button>";
                                         }else{
-                                            echo anchor('costumer/rental/tambah_rental'.$dt->id_mobil, 
+                                            echo anchor('costumer/rental/tambah_rental/'.$dt->id_mobil, 
                                             '<button class="btn btn-success ml-2 mt-2">Rental</button>');
                                         }?>
                                     </td>

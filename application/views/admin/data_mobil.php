@@ -45,7 +45,6 @@
                     
                         <td>
                             <center>
-
                                 <a href="<?= base_url('admin/data_mobil/detail_mobil_nana/').$mb->id_mobil ?>" class="btn btn-sm btn-success"><i class="fas fa-eye"></i></a>
 
                                 <a href="<?= base_url('admin/data_mobil/update_mobil_nana/').$mb->id_mobil ?>" class="btn btn-sm btn-primary"><i class="fas fa-edit"></i></a>

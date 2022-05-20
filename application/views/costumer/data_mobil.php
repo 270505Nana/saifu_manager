@@ -65,15 +65,20 @@
                     </li>
                     
                 </ul>
+                <!-- END SHOW DATA CARD -->
+
+                <!-- BUTTON -->
                 <a href="<?= base_url('costumer/data_mobil/detail_mobil_nana/'.$mb->id_mobil)?>" class="btn btn-warning ml-2 mt-2">Detail Mobil</a>           
                 
                 <?php
                 if ($mb->status == "0") { 
                     echo "<button class='btn btn-danger ml-2 mt-2' disable>Telah di Sewa</button>";
                 }else{
-                    echo anchor('costumer/rental/tambah_rental'.$mb->id_mobil, 
+                    echo anchor('costumer/rental/tambah_rental/'.$mb->id_mobil, 
                     '<button class="btn btn-success ml-2 mt-2">Rental</button>');
                 }?>
+
+                <!-- END BUTTON -->
               </div>
             </div>
           </div>
