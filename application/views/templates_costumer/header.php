@@ -48,7 +48,7 @@
             
                 <li class="nav-item"><a class="nav-link" href="<?php echo base_url('costumer/dashboard')?>">Beranda</a></li>
                 <li class="nav-item"><a class="nav-link" href="<?php echo base_url('costumer/data_mobil')?>">Mobil</a></li>
-                <li class="nav-item"><a class="nav-link" href="<?php echo base_url('costumer/transaksi')?>">Transaksi</a></li>
+                <li class="nav-item"><a class="nav-link" href="<?php echo base_url('costumer/data_transaksi')?>">Transaksi</a></li>
 
                 <li class="nav-item"><a class="nav-link" href="<?php echo base_url('register')?>">Register</a></li>
 

@@ -17,7 +17,7 @@
                     <th>Tgl. Dikembalikan</th>
                     <th>Status Pengembalian</th>
                     <th>Status Rental</th>
-                    <th>Cek Pembayaran</th>
+                    <!-- <th>Cek Pembayaran</th> -->
                     <th>Action</th>
                 </tr>
 
