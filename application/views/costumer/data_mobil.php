@@ -14,19 +14,58 @@
 
     <div class="products">
       <div class="container">
-      <?php echo $this->session->flashdata('pesan')?>
+      <?= $this->session->flashdata('pesan')?>
         <div class="row">
         <?php foreach($mobil as $mb) :?>
           <div class="col-md-4">
             <div class="product-item">
-              <img src="<?php echo base_url('assets/upload/'.$mb->gambar)?>" alt="">
+              <img src="<?= base_url('assets/upload/'.$mb->gambar)?>" alt="">
 
               <div class="down-content">
-                <h4><?php echo $mb->merk?></h4>
-                <h4><?php echo $mb->no_plat?></h4>
 
-
-                <a href="<?php echo base_url('costumer/data_mobil/detail_mobil_nana/'.$mb->id_mobil)?>" class="btn btn-warning ml-2 mt-2">Detail Mobil</a>           
+                <!-- YANG DITAMPILKAN DI DALAM CARD -->
+                <h4><?= $mb->merk?></h4>
+                <h4>Rp.<?= number_format($mb->harga,0,',','.')?> / Hari</h4>
+               
+                <ul class="car-info-list">
+                    <li><?php 
+                        if($mb->ac == "1"){
+                          echo "<i class='fa fa-check-circle text-warning ml-2'></i>";
+                        }else{
+                            echo"<i class='fa fa-times-circle'></i>";
+                        }
+                               
+                    ?>AC   |</li>
+                    <li><?php 
+                        if($mb->supir == "1"){
+                          echo "<i class='fa fa-check-circle text-warning ml-2'></i>";
+                        }else{
+                            echo"<i class='fa fa-times-circle'></i>";
+                        }
+                               
+                    ?>Supir   |</li>
+                    <li><?php 
+                        if($mb->mp3_player == "1"){
+                          echo "<i class='fa fa-check-circle text-warning ml-2'></i>";
+                        }else{
+                            echo"<i class='fa fa-times-circle'></i>";
+                        }
+                               
+                    ?>MP3 Player   |</li>
+                    <li><?php 
+                        if($mb->central_lock == "1"){
+                          echo "<i class='fa fa-check-circle text-warning ml-2'></i>";
+                        }else{
+                            echo"<i class='fa fa-times-circle'></i>";
+                        }
+                               
+                    ?>Central Lock   |</li>
+                    <li>
+                      
+                    </li>
+                    
+                </ul>
+                <a href="<?= base_url('costumer/data_mobil/detail_mobil_nana/'.$mb->id_mobil)?>" class="btn btn-warning ml-2 mt-2">Detail Mobil</a>           
                 
                 <?php
                 if ($mb->status == "0") { 

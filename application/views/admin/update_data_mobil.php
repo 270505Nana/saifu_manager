@@ -48,14 +48,79 @@
 
                                     <?= form_error('warna','<div class="text-small text-danger ml-2 mt-2">','</div>')?>
                                 </div>
+
+                                <div class="form-group">
+                                    <label for="">AC</label>
+                                    <select name="ac" id="" class="form-control">
+                                        <option <?php if($mb->ac == "1"){echo "selected='selected'"; }
+                                        echo $mb->ac;?> value="1">Tersedia</option>
+
+                                        <option <?php if($mb->ac == "0"){echo "selected='selected'"; }
+                                        echo $mb->ac;?> value="0">Tidak Tersedia</option>
+                                    </select>
+                                    <?= form_error('ac','<div class="text-small text-danger ml-2 mt-2">','</div>')?>
+                                </div>
+
+
+                                <div class="form-group">
+                                    <label for="">Supir</label>
+                                    <select name="supir" id="" class="form-control">
+                                        <option <?php if($mb->supir == "1"){echo "selected='selected'"; }
+                                        echo $mb->supir;?> value="1">Tersedia</option>
+
+                                        <option <?php if($mb->supir == "0"){echo "selected='selected'"; }
+                                        echo $mb->supir;?> value="0">Tidak Tersedia</option>
+                                    </select>
+                                    <?= form_error('supir','<div class="text-small text-danger ml-2 mt-2">','</div>')?>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="">MP Player</label>
+                                    <select name="mp3_player" id="" class="form-control">
+                                        <option <?php if($mb->mp3_player == "1"){echo "selected='selected'"; }
+                                        echo $mb->mp3_player;?> value="1">Tersedia</option>
+
+                                        <option <?php if($mb->mp3_player == "0"){echo "selected='selected'"; }
+                                        echo $mb->mp3_player;?> value="0">Tidak Tersedia</option>
+                                    </select>
+                                    <?= form_error('mp3_player','<div class="text-small text-danger ml-2 mt-2">','</div>')?>
+                                </div>
+
+
+                                <div class="form-group">
+                                    <label for="">Central Lock</label>
+                                    <select name="central_lock" id="" class="form-control">
+                                        <option <?php if($mb->central_lock == "1"){echo "selected='selected'"; }
+                                        echo $mb->central_lock;?> value="1">Tersedia</option>
+
+                                        <option <?php if($mb->central_lock == "0"){echo "selected='selected'"; }
+                                        echo $mb->central_lock;?> value="0">Tidak Tersedia</option>
+                                    </select>
+                                    <?= form_error('central_lock','<div class="text-small text-danger ml-2 mt-2">','</div>')?>
+                                </div>
+
                             </div>
 
                             <div class="col-md-6">
-                                <div class="form-group">
+                                    <div class="form-group">
                                         <label for="">Tahun</label>
                                         <input type="number" name="tahun" class="form-control" value="<?= $mb->tahun?>">
 
                                         <?= form_error('tahun','<div class="text-small text-danger ml-2 mt-2">','</div>')?>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="">Harga</label>
+                                        <input type="number" name="harga" class="form-control" value="<?= $mb->harga?>">
+
+                                        <?= form_error('harga','<div class="text-small text-danger ml-2 mt-2">','</div>')?>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="">Denda</label>
+                                        <input type="number" name="denda" class="form-control" value="<?= $mb->denda?>">
+
+                                        <?= form_error('denda','<div class="text-small text-danger ml-2 mt-2">','</div>')?>
                                     </div>
 
                                     <div class="form-group">

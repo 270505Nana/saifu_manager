@@ -26,6 +26,7 @@
                                 if ($dt->kode_type == "SDN"){echo "Sedan";}
                                 elseif($dt->kode_type == "HTB"){echo "Hatchback";}
                                 elseif($dt->kode_type == "MPV"){echo "Multi Purpose Vechile";}
+                                elseif($dt->kode_type == "MNV"){echo "Minivan";}
                                 else{echo "<span class='text-danger'>Type Mobil Belum Terdaftar!</span>";}?>
                                 </td>
                             </tr>
@@ -51,11 +52,54 @@
                             </tr>
 
                             <tr>
+                                <td>Harga : </td>
+                                <td>Rp. <?= number_format($dt->harga,0,',','.')?></td>
+                            </tr>
+
+                            <tr>
+                                <td>Denda : </td>
+                                <td>Rp. <?=number_format($dt->denda,0,',','.')?></td>
+                            </tr>
+
+                            <tr>
                                 <td>Status : </td>
                                 <td><?php
                                 if($dt->status == "0"){echo "<span class='badge badge-danger'>Tidak Tersedia</span>";}
                                 else{echo "<span class='badge badge-primary'>Tersedia</span>";}?></td>
                             </tr>
+
+                            
+                            <tr>
+                                <td>AC : </td>
+                                <td><?php
+                                if($dt->ac == "0"){echo "<span class='badge badge-danger'>Tidak Tersedia</span>";}
+                                else{echo "<span class='badge badge-primary'>Tersedia</span>";}?></td>
+                            </tr>
+
+                            
+                            <tr>
+                                <td>Supir : </td>
+                                <td><?php
+                                if($dt->supir == "0"){echo "<span class='badge badge-danger'>Tidak Tersedia</span>";}
+                                else{echo "<span class='badge badge-primary'>Tersedia</span>";}?></td>
+                            </tr>
+
+                            
+                            <tr>
+                                <td>MP3 Player : </td>
+                                <td><?php
+                                if($dt->mp3_player == "0"){echo "<span class='badge badge-danger'>Tidak Tersedia</span>";}
+                                else{echo "<span class='badge badge-primary'>Tersedia</span>";}?></td>
+                            </tr>
+
+                            
+                            <tr>
+                                <td>Central Lock: </td>
+                                <td><?php
+                                if($dt->central_lock == "0"){echo "<span class='badge badge-danger'>Tidak Tersedia</span>";}
+                                else{echo "<span class='badge badge-primary'>Tersedia</span>";}?></td>
+                            </tr>
+
                         </table>
                              <a href="<?= base_url('admin/data_mobil')?>" class="btn btn-sm btn-danger ml-4">KEMBALI</a>
                             <a href="<?= base_url('admin/data_mobil/update_mobil_nana/'.$dt->id_mobil)?>" class="btn btn-sm btn-success ">EDIT</a>
