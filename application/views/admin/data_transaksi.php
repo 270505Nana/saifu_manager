@@ -32,7 +32,7 @@
                     <td><?= date('d/m/Y', strtotime($tr->tanggal_kembali))?></td>
                     <td>Rp.<?= number_format($tr->harga,0,',','.') ?></td>
                     <td>Rp.<?= number_format($tr->denda,0,',','.')?></td>
-                    <td>Rp.<?= number_format((float)$tr->total_denda,0,',','.')?></td>
+                    <td>Rp.<?= number_format($tr->total_denda,0,',','.')?></td>
                 
                    
                     <td><?php 
@@ -64,13 +64,34 @@
                         }else{ ?>
                         <div class="row">
                             <a href="<?= base_url('admin/data_transaksi/transaksi_selesai_nana/'.$tr->id_rental)?>" class="btn btn-sm btn-success mr-2"><i class="fas fa-check"></i></a>
-                            <a href="<?= base_url('admin/data_transaksi/transaksi_batal_nana/'.$tr->id_rental)?>" class="btn btn-sm btn-danger"><i class="fas fa-times"></i></a>
+                            <a onclick="return confirm('Batalkann Rental?')"href="<?= base_url('admin/data_transaksi/transaksi_batal_nana/'.$tr->id_rental)?>" class="btn btn-sm btn-danger"><i class="fas fa-times"></i></a>
                         </div>
                         <?php } ?>
                     </td>
+
                 </tr>
                <?php endforeach;?>
             </table>
         </div>
     </section>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Informasi Batal Transaksi</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Maaf Transaksi Sudah Selesai, Tidak Bisa Dibatalkan
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Oke</button>
+      </div>
+    </div>
+  </div>
 </div>

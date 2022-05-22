@@ -105,5 +105,26 @@ class data_transaksi extends CI_Controller{
         </div>');
         redirect('admin/data_transaksi');
     }
+
+    public function transaksi_batal_nana($id){
+
+        $where = array('id_rental' => $id);
+        $data  = $this->rental_models->get_where($where,'transaksi')->row();
+        $where2=array('id_mobil' => $data->id_mobil);
+
+        $data2=array('status' => '1');
+        // var_dump($where2);
+        // die();
+        $this->rental_models->update_data('mobil', $data2,$where2);
+        $this->rental_models->delete_data($where,'transaksi');
+        $this->session->set_flashdata('pesan','
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <strong> Transaksi Berhasil diBatalkan! </strong>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>');
+        redirect('admin/data_transaksi');
+    }
 }  
 ?>
