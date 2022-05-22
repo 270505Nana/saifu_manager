@@ -71,7 +71,7 @@
                             <tr>
                                 <td></td>
                                 <td></td>
-                                <td><a href="" class="btn btn-sm btn-secondary"></a>Print Invoice</td>
+                                <td><a href="" class="btn btn-sm btn-secondary">Print Invoice</a></td>
                             </tr>
                         <?php endforeach; ?>
                     </table>

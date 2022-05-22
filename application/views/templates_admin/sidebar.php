@@ -42,7 +42,7 @@
 
               <li><a class="nav-link" href="<?= base_url('auth/logout')?>"><i class="fas fa-sign-out-alt"></i> <span>Logout</span></a></li>
 
-              <li><a class="nav-link" href="<?= base_url('auth/ganti_password')?>"><i class="fas fa-lock"></i> <span>Ganti Password</span></a></li>
+              <!-- <li><a class="nav-link" href="<?= base_url('auth/ganti_password')?>"><i class="fas fa-lock"></i> <span>Ganti Password</span></a></li> -->
             </ul>
             </div>
         </aside>

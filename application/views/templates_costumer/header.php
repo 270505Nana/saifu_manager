@@ -60,15 +60,15 @@
                     <span class=""> | Logout</span></a>
                 </li>
 
-                <!-- GANTI PASSWORD -->
+                <!-- GANTI PASSWORD
                 <li class="nav-item">
                     <a class="nav-link" href="<?php echo base_url('auth/ganti_password')?>">
                     <span class="">Ganti Password</span></a>
                     <?php } else{ ?>
-                      <!-- LOGIN -->
+                      LOGIN
                         <li><a class="nav-link" href="<?php echo base_url('auth/login')?>">Login</a></li>
                     <?php } ?>
-                </li>
+                </li> -->
                         
             
             </ul>
