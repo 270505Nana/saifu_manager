@@ -71,7 +71,7 @@
                             <tr>
                                 <td></td>
                                 <td></td>
-                                <td><a href="" class="btn btn-sm btn-secondary">Print Invoice</a></td>
+                                <td><a href="<?= base_url('costumer/data_transaksi/cetak_invoice_nana/'.$tr->id_rental) ?>" class="btn btn-sm btn-secondary">Print Invoice</a></td>
                             </tr>
                         <?php endforeach; ?>
                     </table>
