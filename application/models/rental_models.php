@@ -5,6 +5,10 @@ class rental_models extends CI_Model{
         return $this->db->get($table);
     }
 
+    public function get_where($where,$table){
+        return $this->db->get_where($table,$where);
+    }
+
     public function insert_data($data,$table){
         $this->db->insert($table,$data);
     }
@@ -56,6 +60,8 @@ class rental_models extends CI_Model{
         $query = $this->db->get_where('transaksi',array('id_rental' => $id));
         return $query->row_array();
     }
+
+
     
 
 }
