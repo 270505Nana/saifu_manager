@@ -13,7 +13,7 @@
                     <th>Tgl Kembali</th>
                     <th>Harga/H</th>
                     <th>Denda/H</th>
-                    <!-- <th>Total Denda</th> -->
+                    <th>Total Denda</th>
                     <th>Tgl.Dikembalikan</th>
                     <th>Status Pengembalian</th>
                     <th>Status Rental</th>
@@ -32,6 +32,7 @@
                     <td><?= date('d/m/Y', strtotime($tr->tanggal_kembali))?></td>
                     <td>Rp.<?= number_format($tr->harga,0,',','.') ?></td>
                     <td>Rp.<?= number_format($tr->denda,0,',','.')?></td>
+                    <td>Rp.<?= number_format((float)$tr->total_denda,0,',','.')?></td>
                 
                    
                     <td><?php 
