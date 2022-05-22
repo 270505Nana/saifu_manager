@@ -53,5 +53,57 @@ class data_transaksi extends CI_Controller{
         // masukkan sebuah function dari php
         force_download($file,NULL);
     }
-}
+
+    public function transaksi_selesai_nana($id){
+
+        $where = array('id_rental' => $id);
+        $data['transaksi'] = $this->db->query("SELECT * FROM transaksi WHERE id_rental='$id'")->result();
+
+        $this->load->view('templates_admin/header');
+        $this->load->view('templates_admin/sidebar');
+        $this->load->view('admin/transaksi_selesai',$data);
+        $this->load->view('templates_admin/footer');
+    }
+    
+    public function transaksi_selesai_aksi_nana(){
+
+        $id                   = $this->input->post('id_rental');
+        $tanggal_pengembalian = $this->input->post('tanggal_pengembalian');
+        $status_rental        = $this->input->post('status_rental');
+        $status_pengembalian  = $this->input->post('status_pengembalian');
+        $tanggal_kembali      = $this->input->post('tanggal_kembali');
+        $denda                = $this->input->post('denda');
+
+        $x                    = strtotime($tanggal_pengembalian);
+        $y                    = strtotime($tanggal_kembali);
+        $selisih              = abs($x - $y)/(60*60*24);
+        // untuk mengkonversi ke harii bisa juga ke jam
+        // urutannya konver ke menit -> jam -> hari
+        // defaultnya kalau di var_dump dia dalam bentuk detik
+        // 60 : 1 menit 60 detik (1 menit)
+        // 60 : 1 jam 60 menit   (1 jam)
+        // 24 : 1 hari 24 jam    (1 hari)
+        $total_denda          = $selisih * $denda;
+
+        $data = array(
+            'tanggal_pengembalian'  =>  $tanggal_pengembalian,
+            'status_rental'         =>  $status_rental,
+            'status_pengembalian'   =>  $status_pengembalian,
+            'total_denda'           =>  $total_denda
+        );
+
+        $where = array('id_rental' => $id);
+
+        $this->rental_models->update_data('transaksi',$data,$where);
+
+        $this->session->set_flashdata('pesan','
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <strong> Transaksi Berhasil di Update! </strong>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>');
+        redirect('admin/data_transaksi');
+    }
+}  
 ?>
