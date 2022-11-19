@@ -1,5 +1,5 @@
 <?php
-class rental_models extends CI_Model{
+class saifu_models extends CI_Model{
 
     public function get_data($table){
         return $this->db->get($table);
@@ -22,14 +22,14 @@ class rental_models extends CI_Model{
         $this->db->delete($table);
     }
 
-    public function ambil_id_mobil_nana($id){
-        $result = $this->db->where('id_mobil',$id)->get('mobil');
-        if ($result->num_rows() > 0) {
-            return $result->result();
-        }else{
-            return false;
-        }
-    }
+//     public function ambil_id_mobil_nan($id){
+//         $result = $this->db->where('id_mobil',$id)->get('mobil');
+//         if ($result->num_rows() > 0) {
+//             return $result->result();
+//         }else{
+//             return false;
+//         }
+//     }
 
     public function cek_login(){
         $username = set_value('username');
@@ -38,8 +38,7 @@ class rental_models extends CI_Model{
         $result   = $this->db
                          ->where('username', $username)
                          ->where('password',  $password)
-                         ->limit(1)
-                         ->get('costumer');
+                         ->get('admin');
         if($result->num_rows() > 0 ){
             // cek data
             return  $result->row();
@@ -55,11 +54,11 @@ class rental_models extends CI_Model{
         $this->db->update($table,$data);
     }
 
-    public function download_pembayaran_nana($id){
+//     public function download_pembayaran_nana($id){
 
-        $query = $this->db->get_where('transaksi',array('id_rental' => $id));
-        return $query->row_array();
-    }
+//         $query = $this->db->get_where('transaksi',array('id_rental' => $id));
+//         return $query->row_array();
+//     }
 
 
     

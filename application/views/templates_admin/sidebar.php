@@ -15,33 +15,25 @@
         </form>
         <ul class="navbar-nav navbar-right">
           <li class="dropdown"><a href="#" class="nav-link nav-link-lg nav-link-user">
-            <div class="d-sm-none d-lg-inline-block">Selamat Datang, <?php echo $this->session->userdata('nama')?></div></a>
+            <div class="d-sm-none d-lg-inline-block">Selamat Datang, Nana<?php echo $this->session->userdata('nama')?></div></a>
           </li>
         </ul>
       </nav>
       <div class="main-sidebar">
         <aside id="sidebar-wrapper">
           <div class="sidebar-brand">
-            <a href="index.html">APP RENTAL MOBIL</a>
+            <a href="index.html">SAIFU MANAGER</a>
           </div>
           <div class="sidebar-brand sidebar-brand-sm">
             <a href="index.html">rm</a>
           </div>
           <ul class="sidebar-menu">
-              <li><a class="nav-link" href="<?= base_url('admin/dashboard')?>"><i class="fas fa-tachometer-alt"></i> <span>Dashboard</span></a></li>
-
-              <li><a class="nav-link" href="<?= base_url('admin/data_mobil')?>"><i class="fas fa-car"></i> <span>Data Mobil</span></a></li>
-
-              <li><a class="nav-link" href="<?= base_url('admin/data_tipe')?>"><i class="fas fa-grip-horizontal"></i> <span>Data Tipe</span></a></li>
-
-              <li><a class="nav-link" href="<?= base_url('admin/data_costumer')?>"><i class="fas fa-users"></i> <span>Data Costumer</span></a></li>
-
-              <li><a class="nav-link" href="<?= base_url('admin/data_transaksi')?>"><i class="fas fa-random"></i> <span>Transaksi</span></a></li>
-
-              <li><a class="nav-link" href="<?= base_url('admin/data_laporan')?>"><i class="fas fa-clipboard-list"></i> <span>Laporan</span></a></li>
-
+              <li><a class="nav-link" href="<?= base_url('admin/dashboard')?>"><i class="fas fa-tachometer-alt"></i> <span>Rekap data</span></a></li>
+              <li><a class="nav-link" href="<?= base_url('admin/pengeluaran')?>"><i class="fas fa-plus"></i> <span>Tambah Pengeluaran</span></a></li>
+              <li><a class="nav-link" href="<?= base_url('admin/pemasukan')?>"><i class="fas fa-plus"></i> <span>Tambah Pemasukan</span></a></li>
+              <li><a class="nav-link" href="<?= base_url('admin/pengeluaran/rekap_pengeluaran')?>"><i class="fas fa-clipboard-list"></i> <span>Rekap data Pengeluaran</span></a></li>
+              <li><a class="nav-link" href="<?= base_url('admin/pemasukan/rekap_pemasukan')?>"><i class="fas fa-clipboard-list"></i> <span>Rekap data Pemasukan</span></a></li>
               <li><a class="nav-link" href="<?= base_url('auth/logout')?>"><i class="fas fa-sign-out-alt"></i> <span>Logout</span></a></li>
-
               <!-- <li><a class="nav-link" href="<?= base_url('auth/ganti_password')?>"><i class="fas fa-lock"></i> <span>Ganti Password</span></a></li> -->
             </ul>
             </div>
